@@ -109,14 +109,14 @@ int test_cbmap(int argc, char** argv)
 
 	fprintf(stdout, "Testing map without key allocation...\n");
 	cbmap_t map = cbmap_new_with_static_keys_and_values();
-	exercise_map(map);
+	result = exercise_map(map);
 	assert(result == 0);
 	cbmap_destroy(&map);
 	CBM_MEM_LOG();
 
 	fprintf(stdout, "Testing map with key allocation...\n");
 	map = cbmap_new();
-	exercise_map(map);
+	result = exercise_map(map);
 	assert(result == 0);
 	cbmap_destroy(&map);
 	CBM_MEM_LOG();
